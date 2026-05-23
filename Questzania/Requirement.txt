@@ -1,0 +1,28 @@
+7/5
+
+RM 950
+
+Admin (SEKOLAH)
+1. Daftar Pelajar
+2. Daftar Parents
+3. Daftar Teacher (Untuk Kelas)
+
+Teacher (Class)
+1. Daftar Pelajar
+2. Daftar Parent
+3. Tambah Nota (PDF)
+4. Quiz (Google Form) Submit Markah
+
+Student
+1. View Nota
+2. View Quiz
+3. View Markah
+
+Parent
+1. Monitor Student
+2. View Nota
+3. View Quiz
+4. View Markah Quiz
+
+
+SEKOLAH -> TEACHER -> STUDENT -> PARENT
