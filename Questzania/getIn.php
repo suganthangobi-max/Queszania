@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 include("dbConnect.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['login_user'] = $myusername;
         $_SESSION['role'] = $role;
         $_SESSION['uid'] = $uid;
-        ob_end_clean();
+        session_write_close();
         if ($role == 'Admin') {
             header("Location: Admin/index.php");
         } elseif ($role == 'Student') {
@@ -28,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         exit;
     } else {
-        ob_end_clean();
         header("Location: index.php?error=1");
         exit;
     }
