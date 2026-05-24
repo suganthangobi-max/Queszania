@@ -1,10 +1,11 @@
 <?php
-session_start();
-if (!$_SESSION["login_user"] || $_SESSION["role"] !='Admin') {
-    echo "
-    <script type='text/javascript'>
-window.location.href ='../index.php';
-</script>";
+ob_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION["login_user"]) || $_SESSION["role"] !='Admin') {
+    echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
+    exit;
 }
 include('../dbConnect.php');
 $uid = $_SESSION['uid'];
@@ -15,5 +16,4 @@ $nama = $row['nama'];
 $noMatrik = $row['noKp'];
 $login_session = $_SESSION['login_user'];
 $role=$_SESSION['role'];
-
 ?>
