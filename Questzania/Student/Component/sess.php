@@ -1,6 +1,8 @@
 <?php
 ob_start();
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!$_SESSION["login_user"] || $_SESSION["role"] !='Student') {
     echo "
     <script type='text/javascript'>
@@ -18,5 +20,4 @@ $noFon = $row['noFon'];
 $kelas_id = $row['kelas_id'];
 $login_session = $_SESSION['login_user'];
 $role=$_SESSION['role'];
-
 ?>

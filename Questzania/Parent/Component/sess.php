@@ -1,6 +1,8 @@
 <?php
 ob_start();
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!$_SESSION["login_user"] || $_SESSION["role"] !='Parent') {
     echo "
     <script type='text/javascript'>
