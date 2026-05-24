@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+include("dbConnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form 
