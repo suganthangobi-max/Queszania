@@ -3,6 +3,7 @@
     "description": "Questzania School Management System",
     "type": "project",
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "ext-mysqli": "*"
     }
 }
