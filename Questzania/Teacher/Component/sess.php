@@ -1,5 +1,5 @@
 <?php
-session_start();
+ob_start();
 if (!$_SESSION["login_user"] || $_SESSION["role"] !='Teacher') {
     echo "
     <script type='text/javascript'>
