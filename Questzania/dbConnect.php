@@ -1,17 +1,13 @@
 <?php
+$host = "mysql.railway.internal";
+$user = "root";
+$password = "UlkLxQTzEEzAIDbKWKQhpgKkOtoVobXR";
+$database = "railway";
+$port = 3306;
 
-$hostname = 'localhost';
+$conn = mysqli_connect($host, $user, $password, $database, $port);
 
-$username = 'root';
-
-$password = '';
-
-$database = 'questzania';
-
-$conn = mysqli_connect($hostname,  $username,  $password, $database) or die('Connecting to MySQL failed');
-
-
-//echo 'database connected';
-
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>
-
