@@ -1,9 +1,11 @@
 <?php
 ob_start();
+ini_set('session.save_path', '/tmp');
+session_name('QSESSID');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (!isset($_SESSION["login_user"]) || $_SESSION["role"] !='Admin') {
+if (!$_SESSION["login_user"] || $_SESSION["role"] !='Admin') {
     echo "<script type='text/javascript'>window.location.href ='../index.php';</script>";
     exit;
 }

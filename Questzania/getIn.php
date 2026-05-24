@@ -1,5 +1,8 @@
 <?php
 ini_set('session.save_path', '/tmp');
+ini_set('session.use_cookies', 1);
+ini_set('session.use_only_cookies', 1);
+session_name('QSESSID');
 session_start();
 include("dbConnect.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
